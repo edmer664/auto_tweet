@@ -31,7 +31,7 @@ if res.status_code == 200:
     logging.info("Request successful")
     # get the quote
     quote = res.json()
-    # tweet the quote
+    
     api.update_status(status=f"""{quote['en']}\n- {quote['author']} \n\n#programming #quotes #quoteoftheday""")
     # make log
     time.sleep(3)
@@ -42,13 +42,7 @@ if res.status_code == 200:
 
 else:
     logging.error("Request failed")
-    # make a log entry in case of error
-    # with open('error.log', 'a') as f:
-    #     # get time
-    #     time = time.ctime(time.time()).split(' ')
-    #     f.write(f"""{time[3]} {time[1]} {time[2]} {time[4]}\n
-    #     {res.status_code} {res.reason} {res.text}""")
-    #     f.close()
+    
     logging.info(f"""{res.status_code} {res.text}""")
         # exit the program
 
