@@ -1,4 +1,3 @@
-from cmath import log
 import tweepy
 import os
 import requests
@@ -6,7 +5,6 @@ import time
 from dotenv import load_dotenv
 import logging
 
-import urllib3
 load_dotenv()
 # tls 1.2 error 
 # https://stackoverflow.com/questions/53497/how-do-i-set-tls-1-0-as-default-in-python-requests
@@ -38,11 +36,6 @@ if res.status_code == 200:
     # make log
     time.sleep(3)
     logging.info("Tweet successful")
-    # with open('log.txt', 'a') as f:
-    #     time = time.ctime(time.time()).split(' ')
-    #     f.write(f"""{time[3]} {time[1]} {time[2]} {time[4]}\n
-    #     {quote}\n\n""")
-    #     f.close()
     logging.info(f"""{quote['en']}\n- {quote['author']} \n\n#programming #quotes #quoteoftheday""")
         # exit the program
     
